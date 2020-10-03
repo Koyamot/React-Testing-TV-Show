@@ -113,20 +113,8 @@ const episodes = {
     }
   };
 
-  test("App fetches episode data from API and renders it", async ()=> {
-    mockFetchShow.mockResolvedValueOnce(episodes);
-    const {findByText,getByText,getAllByTestId} = render(<App/>);
-    await wait(() => {
-        findByText(/Select a season/i);
-      });
-    
-    // waitFor(() => {
-  
-    // const button = getByText(/select a season/i);
-    // fireEvent.click(button);
-    // fireEvent.click(getByText(/season 1/i))   
-    // expect(getAllByTestId(/episode/i).toHaveLenght(4));
-    // })
-});
 
+  test('Render the heading', async () => {
+    // Render the React app into jest DOM so we can test against it
+    const wrapper = rtl.render(<App />)
 
