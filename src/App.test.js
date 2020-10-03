@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render, wait, fireEvent, screen } from '@testing-library/react';
-import { fetchShow as mockFetchShow} from './api/fetchShow'; 
+import { fetchShow as mockFetchShow } from './api/fetchShow'; 
 import App from './App';
 
 
@@ -114,7 +114,9 @@ const episodes = {
   };
 
 
-  test('Render the heading', async () => {
-    // Render the React app into jest DOM so we can test against it
-    const wrapper = rtl.render(<App />)
+  test("App fetches and renders data", async () => {
+    mockFetchShow.mockResolvedValueOnce( episodes );
+    const { getByText, getByTestId } = render(<App />);
+  })
+
 

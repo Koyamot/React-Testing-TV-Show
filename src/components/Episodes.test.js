@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from '@testing-library/react';
 
-import Episodes from './Episodes.txt';
+import Episodes from './Episodes.test.js';
 
 const mockEpisode = [{
     airdate: "2016-07-15",
